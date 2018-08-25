@@ -1,6 +1,6 @@
 { 
     "token"  : " ",
-    "ms" : 1200,
+    "ms" : 800,
     "roleToDisco" : ["Rainbow+"],
     "prefix" : "mr!",
     "Owner_id" : ["335035386923581440"],
