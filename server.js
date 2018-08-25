@@ -98,46 +98,6 @@ client.on('guildMemberAdd', member => {
       console.log('Watashi wa Siap!');
     });
 
-client.on(`guildMemberAdd`, async member => {
-    console.log(`${member.id} has joined the server!`);
-    let welcomechannel = member.guild.channels.find(`name`, "welcome-goodbye", "general");
-    let jEmbed = new Discord.RichEmbed()
-        .setDescription(`Oh Hi! Welcome ${member} has joined the server!`)
-        .setColor("RANDOM");
-    welcomechannel.send(jEmbed);
-});
-
-client.on(`guildMemberRemove`, async member => {
-  console.log(`${member} has left the server`);
-  let welcomechannel = member.guild.channels.find(`name`, "welcome-goodbye", "general");
-  let lEmbed = new Discord.RichEmbed()
-      .setDescription(`Oh no! ${member} has left the server :sob:`)
-      .setColor("RANDOM");
-  welcomechannel.send(lEmbed);
-});
-
-client.on("guildMemberAdd", member => {
-    let guild = member.guild;
-    let count = guild.memberCount;
-    let total = member.guild.channels.get('478017818449805312');
-    let userc = member.guild.channels.get('478017880265326634');
-    let botc = member.guild.channels.get('478017926364921856');
-    total.setName(`Total Member : ${count}`);
-    userc.setName(`Total User : ${guild.members.filter(m => !m.user.bot).size}`);
-    botc.setName(`Total Bot : ${guild.members.filter(m => m.user.bot).size}`);
-});
-
-client.on("guildMemberRemove", member => {
-    let guild = member.guild;
-    let count = guild.memberCount;
-    let total = member.guild.channels.get('478017818449805312');
-    let userc = member.guild.channels.get('478017880265326634');
-    let botc = member.guild.channels.get('478017926364921856');
-    total.setName(`Total Member : ${count}`);
-    userc.setName(`Total User : ${guild.members.filter(m => !m.user.bot).size}`);
-    botc.setName(`Total Bot : ${guild.members.filter(m => m.user.bot).size}`);
-});
-
     // Create an event listener for messages
     client.on('message', message => {
       // If the message is "what is my avatar"
